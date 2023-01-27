@@ -10,7 +10,7 @@
 
 ## DB ERD
 
-![erd](diagram.png)
+<img src="diagram.png" alt="erd" width="500"/>
 
 ## Tech Stack
 
