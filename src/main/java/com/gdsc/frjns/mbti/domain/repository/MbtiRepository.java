@@ -1,4 +1,4 @@
-package com.gdsc.frjns.mbti.repository;
+package com.gdsc.frjns.mbti.domain.repository;
 
 import com.gdsc.frjns.mbti.domain.Mbti;
 import org.springframework.data.jpa.repository.JpaRepository;

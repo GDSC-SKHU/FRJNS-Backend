@@ -1,5 +1,6 @@
 package com.gdsc.frjns.mbti.domain;
 
+import com.gdsc.frjns.mbti.dto.MbtiResponse;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -14,20 +15,20 @@ public class Mbti {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @Column(nullable = false)
+    @Column(name = "source_mbti", nullable = false)
     private String sourceMbti;
 
-    @Column(nullable = false)
+    @Column(name = "target_name", nullable = false)
     private String targetName;
 
-    @Column(nullable = false)
+    @Column(name = "image_url", nullable = false)
     private String imageUrl;
 
-    @Column(nullable = false)
+    @Column(name = "content", nullable = false)
     private String content;
 
-    public MbtiDTO toDTO() {
-        return MbtiDTO.builder()
+    public MbtiResponse toResponse() {
+        return MbtiResponse.builder()
                 .sourceMbti(sourceMbti)
                 .targetName(targetName)
                 .imageUrl(imageUrl)

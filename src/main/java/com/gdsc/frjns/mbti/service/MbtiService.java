@@ -1,8 +1,8 @@
 package com.gdsc.frjns.mbti.service;
 
 import com.gdsc.frjns.mbti.domain.Mbti;
-import com.gdsc.frjns.mbti.domain.MbtiDTO;
-import com.gdsc.frjns.mbti.repository.MbtiRepository;
+import com.gdsc.frjns.mbti.dto.MbtiResponse;
+import com.gdsc.frjns.mbti.domain.repository.MbtiRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,11 +16,11 @@ public class MbtiService {
     private final MbtiRepository mbtiRepository;
 
     @Transactional(readOnly = true)
-    public List<MbtiDTO> findAllBySourceMbti(String mbti) {
+    public List<MbtiResponse> findAllBySourceMbti(String mbti) {
         List<Mbti> members = mbtiRepository.findAllBySourceMbti(mbti);
 
         return members.stream()
-                .map(Mbti::toDTO)
+                .map(Mbti::toResponse)
                 .collect(Collectors.toList());
     }
 }
