@@ -35,7 +35,7 @@ tasks.named('test') {
 }
 
 bootBuildImage {
-    imageName = System.getenv("DOCKER_ID") + "/${project.name}"
+    imageName = System.getenv("DOCKER_ID") + "/${project.name.toLowerCase()}"
     publish = true
     docker {
         publishRegistry {
